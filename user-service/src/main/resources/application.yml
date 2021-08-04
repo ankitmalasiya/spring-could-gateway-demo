@@ -4,14 +4,16 @@ server:
 spring:
   application:
     name: user-service
-    mongodb:
-      uri: mongodb://localhost:27017/microservices1-db
-  #  datasource:
-  #    username: root
-  #    password: password
-  #    url: jdbc:mysql://localhost:3306/testdb
-  #    driver-class-name: com.mysql.cj.jdbc.Driver
-  data:
+  datasource:
+    url: jdbc:mysql://localhost:3306/testdb?useSSL=false
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
 jwt:
   secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
